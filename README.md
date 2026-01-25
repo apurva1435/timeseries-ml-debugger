@@ -10,3 +10,12 @@ This repository is currently in an early exploratory stage and will grow increme
 ## What is Overfitting?
 
 Overfitting occurs when a machine learning model performs very well on training data but poorly on unseen data. This usually means the model has memorized patterns specific to the training set instead of learning generalizable features.
+
+## How to Run
+
+Clone the repository and run the example from the project root.
+
+```bash
+git clone https://github.com/apurva1435/timeseries-ml-debugger.git
+cd timeseries-ml-debugger
+python -m examples.simple_example

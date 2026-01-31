@@ -1,21 +1,45 @@
 # timeseries-ml-debugger
 
+A lightweight, beginner-friendly toolkit to analyze and debug common failure modes
+in machine learning models trained on time-series data.
 
-This project explores simple tools to help understand why machine learning models fail during training and evaluation, especially on time-series data.
+This project focuses on **why models fail**, not just how to train them.
 
-The initial focus is on detecting common issues such as overfitting by analyzing training behavior and performance metrics.
+---
 
-This repository is currently in an early exploratory stage and will grow incrementally.
+🔍Problem Overview
 
-## What is Overfitting?
+Machine learning models trained on time-series data often fail silently due to issues such as:
+- overfitting to training data
+- underfitting due to overly simple models
+- misleading or unstable training behavior
 
-Overfitting occurs when a machine learning model performs very well on training data but poorly on unseen data. This usually means the model has memorized patterns specific to the training set instead of learning generalizable features.
+These problems are difficult to diagnose, especially for beginners and early-stage researchers.
 
-## How to Run
+This toolkit provides **simple, reusable diagnostics and visualizations** to identify
+such issues early in the model development process.
 
-Clone the repository and run the example from the project root.
+---
+
+✅ Current Features
+
+- **Overfitting Detection**
+  - Detects divergence between training and validation loss
+- **Underfitting Detection**
+  - Identifies when both losses remain consistently high
+- **Unified Training Analyzer**
+  - Runs multiple diagnostics together and returns a structured summary
+- **Loss Curve Visualization**
+  - Plots and saves training vs validation loss curves
+- **Beginner-Friendly Examples**
+  - Minimal runnable examples for each feature
+
+---
+
+▶️ How to Run
+
+Clone the repository and run examples from the project root.
 
 ```bash
 git clone https://github.com/apurva1435/timeseries-ml-debugger.git
 cd timeseries-ml-debugger
-python -m examples.simple_example

@@ -42,4 +42,19 @@ Clone the repository and run examples from the project root.
 
 ```bash
 git clone https://github.com/apurva1435/timeseries-ml-debugger.git
+
+## 📉 Train–Validation Gap Analysis
+
+The toolkit now includes gap-based diagnostics to analyze the relationship
+between training and validation loss across epochs.
+
+Features:
+- detection of persistent gap and sudden divergence
+- severity classification (low / medium / high)
+- actionable recommendations for corrective steps
+
+Example:
+```bash
+python -m examples.gap_analysis_example
+
 cd timeseries-ml-debugger

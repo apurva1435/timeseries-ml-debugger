@@ -7,3 +7,4 @@ result = analyze_train_val_gap(train_losses, val_losses)
 
 print("Returned result:", result)
 print("⚠️ Severity:", result["severity"].upper())
+print("💡 Recommendation:", result["recommendation"])

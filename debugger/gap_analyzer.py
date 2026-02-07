@@ -51,9 +51,7 @@ def analyze_train_val_gap(train_losses, val_losses, gap_threshold=0.3):
         recommendation = "Monitor training closely and consider tuning hyperparameters."
     else:
         recommendation = "No immediate action required."
-
-
-   return {
+    return {
     "status": status,
     "severity": severity,
     "message": message,

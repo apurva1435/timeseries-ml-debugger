@@ -44,9 +44,19 @@ def analyze_train_val_gap(train_losses, val_losses, gap_threshold=0.3):
 
     print(f"🔎 Gap analysis result: {status}")
 
-    return {
-        "status": status,
-        "severity": severity,
-        "message": message,
-        "final_gap": final_gap
-    }
+    # Actionable suggestion based on severity
+    if severity == "high":
+        recommendation = "Consider early stopping, stronger regularization, or reducing model complexity."
+    elif severity == "medium":
+        recommendation = "Monitor training closely and consider tuning hyperparameters."
+    else:
+        recommendation = "No immediate action required."
+
+
+   return {
+    "status": status,
+    "severity": severity,
+    "message": message,
+    "final_gap": final_gap,
+    "recommendation": recommendation
+}

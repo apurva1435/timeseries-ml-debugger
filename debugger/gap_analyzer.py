@@ -3,15 +3,24 @@ def analyze_train_val_gap(train_losses, val_losses, gap_threshold=0.3):
     Analyze the gap between training and validation losses to detect
     overfitting or unstable training behavior.
 
+    Args:
+    
+        train_losses (list): Training loss values per epoch
+        val_losses (list): Validation loss values per epoch
+        gap_threshold (float): Threshold to flag divergence
+
     Returns:
-        dict: analysis summary
+        dict: Analysis summary including status and severity
     """
 
     if len(train_losses) != len(val_losses):
         raise ValueError("Training and validation loss lists must be the same length.")
 
+    # Compute gaps
     gaps = [v - t for t, v in zip(train_losses, val_losses)]
+    final_gap = round(gaps[-1], 3)
 
+    # Detect patterns
     persistent_gap = all(gap > gap_threshold for gap in gaps[-3:])
     sudden_divergence = any(gap > gap_threshold for gap in gaps)
 
@@ -25,11 +34,19 @@ def analyze_train_val_gap(train_losses, val_losses, gap_threshold=0.3):
         status = "normal_training"
         message = "No significant train-validation gap detected."
 
-    result = {
-        "status": status,
-        "message": message,
-        "final_gap": round(gaps[-1], 3)
-    }
+    # Determine severity
+    if final_gap < 0.2:
+        severity = "low"
+    elif final_gap < 0.4:
+        severity = "medium"
+    else:
+        severity = "high"
 
     print(f"🔎 Gap analysis result: {status}")
-    return result
+
+    return {
+        "status": status,
+        "severity": severity,
+        "message": message,
+        "final_gap": final_gap
+    }

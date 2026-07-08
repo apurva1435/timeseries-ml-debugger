@@ -1,54 +1,62 @@
-# timeseries-ml-debugger
+# TaskSight AI
 
-A lightweight, beginner-friendly toolkit to analyze and debug common failure modes
-in machine learning models trained on time-series data.
+A multimodal vision intelligence platform that combines Image Captioning, Visual Question Answering (VQA), and Object Detection into a single interactive application.
 
-This project focuses on **why models fail**, not just how to train them.
+## Features
 
----
+- Image Caption Generation using BLIP
+- Visual Question Answering
+- Real-time Object Detection with YOLOv8
+- Image Processing using OpenCV
+- Experiment History
+- FastAPI Backend
+- React Frontend
+- SQLite Database
 
-## 🔍 Problem Overview
+## Tech Stack
 
-Machine learning models trained on time-series data often fail silently due to issues such as:
-- overfitting to training data
-- underfitting due to overly simple models
-- misleading or unstable training behavior
+### Backend
+- Python
+- FastAPI
+- SQLite
 
-These problems are difficult to diagnose, especially for beginners and early-stage researchers.
+### AI Models
+- BLIP
+- YOLOv8
+- OpenCV
 
-This toolkit provides **simple, reusable diagnostics and visualizations** to identify
-such issues early in the model development process.
+### Frontend
+- React
 
----
+## Project Structure
 
-## ✅ Current Features
+```
+TaskSight-AI
+│
+├── backend
+├── frontend
+├── database
+├── models
+├── services
+└── README.md
+```
 
-- **Overfitting Detection**
-  - Detects divergence between training and validation loss
+## How it Works
 
-- **Underfitting Detection**
-  - Identifies when both losses remain consistently high
+1. Upload an image.
+2. Generate an image caption.
+3. Ask questions about the image.
+4. Detect objects in the image.
+5. Store experiment history for future reference.
 
-- **Unified Training Analyzer**
-  - Runs multiple diagnostics together and returns a structured summary
+## Future Improvements
 
-- **Train–Validation Gap Analysis**
-  - Detects persistent gaps and sudden divergence
-  - Assigns severity levels (low / medium / high)
-  - Provides actionable recommendations for corrective steps
+- User Authentication
+- PDF/Image Batch Processing
+- OCR Integration
+- Cloud Deployment
+- Model Comparison Dashboard
 
-- **Loss Curve Visualization**
-  - Plots and saves training vs validation loss curves
+## Author
 
-- **Beginner-Friendly Examples**
-  - Minimal runnable examples for each feature
-
----
-
-## ▶️ How to Run
-
-Clone the repository and run examples from the project root.
-
-```bash
-git clone https://github.com/apurva1435/timeseries-ml-debugger.git
-cd timeseries-ml-debugger
+Apurva Sharma
